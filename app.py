@@ -28,3 +28,21 @@ def decrypt(encrypt):
     fernet = Fernet(key)
     decrypted_message = fernet.decrypt(encrypt.encode()).decode()
     return decrypted_message
+
+if __name__ == "__main__":
+    print("1. Bericht Encrypten")
+    print("2. Bericht Decrypten")
+    choice = input("Wil je je bericht encrypten of decrypten? (1 of 2): ")
+
+    if choice == '1':
+        message = input("Voer het bericht in dat je wilt encrypten: ")
+        encrypted = encrypt(message)
+        print(f"🔐 Encrypted bericht: {encrypted}")
+
+    elif choice == '2':
+        encrypted = input("Voer het encrypted bericht in dat je wilt decrypten: ")
+        try:
+            decrypted = decrypt(encrypted)
+            print(f"🔓 Decrypted bericht: {decrypted}")
+        except Exception:
+            print("❌ Er is iets fout gegaan met het decrypten van je bericht.")

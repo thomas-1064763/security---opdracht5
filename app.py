@@ -4,7 +4,7 @@ def gen_key():
     key = Fernet.generate_key()
     with open("secret.key", "wb") as key_file:
         key_file.write(key)
-        print("🔑 Nieuwe sleutel is succesvol gegeneerd en opgeslagen als 'secret.key'.")
+        print("🔑 Nieuwe sleutel is succesvol gegenereerd en opgeslagen als 'secret.key'.")
     return key
 
 def load_key():
